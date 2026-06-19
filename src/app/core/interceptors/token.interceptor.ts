@@ -6,21 +6,15 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
     '/auth/logout'
   ];
   const isSkipAuth = skipAuths.some((url) => req.url.includes(url));
-  if (isSkipAuth) {
-    return next(req);
-  }
-
+  if (isSkipAuth) return next(req);
   const accessToken = localStorage.getItem('accessToken');
-
-  if (accessToken) {
-      const tokenizedReq = req.clone({
-        setHeaders: {
-          'Content-Type' : 'application/json',
-          Authorization: `Bearer ${accessToken}`
-        }
-      })
-      return next(tokenizedReq);
-  }
-
-  return next(req);
+  if(!accessToken) return next(req);
+  const tokenizedReq = req.clone({
+    setHeaders: {
+      'Content-Type' : 'application/json',
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+   
+  return next(tokenizedReq);
 };

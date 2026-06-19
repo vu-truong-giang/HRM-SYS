@@ -3,12 +3,21 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { tokenInterceptor } from './core/interceptors/token.interceptor';
+import { globalHttpErrorInterceptor } from './core/http/global-http-error.interceptor';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideAnimations  } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr'
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
-    provideHttpClient(withInterceptors([tokenInterceptor]))
+    provideHttpClient(
+      withInterceptors([
+        tokenInterceptor,
+        globalHttpErrorInterceptor
+      ])),
+    provideAnimations(),
+    provideToastr()
   ]
 };
