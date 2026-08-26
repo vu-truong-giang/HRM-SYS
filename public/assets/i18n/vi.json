@@ -101,7 +101,7 @@
       "NAME": "Tên phòng ban",
       "DESCRIPTION": "Mô tả"
     },
-    "LOGOUT": "Đăng xuất,
+    "LOGOUT": "Đăng xuất",
      "FORM": {
       "TITLE_CREATE": "Thêm phòng ban",
       "TITLE_EDIT": "Chỉnh sửa phòng ban",
@@ -110,7 +110,7 @@
       "DESCRIPTION": "Mô tả",
       "SUBMIT": "Lưu",
       "CANCEL": "Huỷ"
-  },
+    },
      "TOAST": {
       "CREATE_SUCCESS": "Tạo phòng ban thành công",
       "UPDATE_SUCCESS": "Cập nhật phòng ban thành công",
