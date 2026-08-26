@@ -133,9 +133,8 @@ export class DataTableDemoComponent implements OnInit {
     this.data.set(result.slice(start, end));
   }
 
-  onPageChange(event: { page: number; size: number }): void {
+  onPageChange(event: { page: number}): void {
     this.pageIndex.set(event.page);
-    this.pageSize.set(event.size);
     this.loadData();
   }
 

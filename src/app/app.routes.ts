@@ -21,9 +21,21 @@ export const routes: Routes = [
           import('./features/pages/data-table-demo/data-table-demo.component')
             .then(m => m.DataTableDemoComponent) },
       { path: 'employee',
-        loadComponent: () => 
-          import('./features/employee/pages/employee-list/employee-list.component')
-            .then(m => m.EmployeeListComponent) },
+        children: [
+          {
+            path: '',
+            loadComponent: () => 
+              import('./features/employee/pages/employee-list/employee-list.component')
+                .then(m => m.EmployeeListComponent)
+          },
+          {
+            path: 'create',
+            loadComponent: () => 
+              import('./features/employee/pages/employee-create/employee-create.component')
+                .then(m => m.EmployeeCreateComponent)
+          }
+        ]
+      },
       { path: 'department',
         loadComponent: () => 
           import('./features/pages/data-table-demo/data-table-demo.component')
