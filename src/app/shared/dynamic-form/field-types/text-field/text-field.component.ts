@@ -1,12 +1,13 @@
-import { Component, input, Input } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { Component, input } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule} from "@angular/forms";
 import { TranslatePipe } from '@ngx-translate/core';
 import { TextField } from "../../../models/field-types/text-fiels.model";
 @Component({
     selector: 'app-text-field',
     standalone : true,
-    imports : [ReactiveFormsModule, TranslatePipe],
+    imports : [CommonModule, ReactiveFormsModule, TranslatePipe],
     templateUrl :'./text-field.component.html',
 })
 

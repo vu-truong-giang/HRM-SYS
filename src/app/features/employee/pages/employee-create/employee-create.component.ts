@@ -23,6 +23,7 @@ export class EmployeeCreateComponent {
       name: 'Mã nhân viên',
       label: 'Mã nhân viên',
       placeholder: 'EMP__',
+      required: true,
       pattern: /^EMP\d{3}$/,
       className: {
         span: 'col-span-6'
@@ -33,6 +34,7 @@ export class EmployeeCreateComponent {
       name: 'Họ và tên',
       label: 'Họ và tên',
       placeholder: 'Nguyễn Văn A',
+      required: true,
       pattern: /^[a-zA-ZÀ-ỹ\s]+$/,
       className: {
         span: 'col-span-6'
@@ -42,6 +44,7 @@ export class EmployeeCreateComponent {
       type: 'select',
       name: 'Giới tính',
       label: 'Giới tính',
+      required: true,
       options: [
         { label: 'Nam', value: 'male' },
         { label: 'Nữ', value: 'female' },
@@ -57,6 +60,7 @@ export class EmployeeCreateComponent {
       minDate: new Date(1900, 0, 1),
       maxDate: new Date(),
       placeholder: 'yyyy-mm-dd',
+      required: true,
       className: {
         span: 'col-span-6',
         label: 'block text-sm font-semibold text-gray-700'
@@ -67,6 +71,7 @@ export class EmployeeCreateComponent {
       name: 'Email',
       label: 'Email',
       placeholder: 'name@company.vn',
+      required: true,
       pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       className: {
         span: 'col-span-6'
@@ -76,6 +81,7 @@ export class EmployeeCreateComponent {
       type: 'select',
       name: 'Phòng ban',
       label: 'Phòng ban',
+      required: true,
       options: [
         { label: 'Kinh doanh', value: 'sales' },
         { label: 'Kỹ thuật', value: 'engineering' },
@@ -89,6 +95,7 @@ export class EmployeeCreateComponent {
       type: 'select',
       name: 'Chức danh',
       label: 'Chức danh',
+      required: true,
       options: [
         { label: 'Nhân viên', value: 'employee' },
         { label: 'Quản lý', value: 'manager' },
@@ -105,6 +112,7 @@ export class EmployeeCreateComponent {
       minDate: new Date(1900, 0, 1),
       maxDate: new Date(),
       placeholder: 'yyyy-mm-dd',
+      required: true,
       className: {
         span: 'col-span-6',
         label: 'block text-sm font-semibold text-gray-700'
@@ -115,6 +123,7 @@ export class EmployeeCreateComponent {
       name: 'Lương cơ bản',
       label: 'Lương cơ bản',
       placeholder: 'VND',
+      required: true,
       pattern: /^\d+$/,
       className: {
         span: 'col-span-6'
@@ -124,6 +133,7 @@ export class EmployeeCreateComponent {
       type: 'select',
       name: 'Trạng thái',
       label: 'Trạng thái',
+      required: true,
       options: [
         { label: 'Hoạt động', value: 'active' },
         { label: 'Ngừng hoạt động', value: 'inactive' },
