@@ -1,4 +1,5 @@
 import { Component , inject , signal} from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { TextField } from '../../../../shared/models/field-types/text-fiels.model';
 import { DateField } from '../../../../shared/models/field-types/date-field.model';
@@ -10,18 +11,19 @@ export type dynamicform = TextField | DateField | SelectField | EmailField ;
 @Component({
   selector: 'app-employee-create',
   imports: [
-    DynamicFormComponent
+    DynamicFormComponent,
+    TranslatePipe
   ],
   templateUrl: './employee-create.component.html',
   styleUrl: './employee-create.component.scss'
 })
 export class EmployeeCreateComponent {
-  formClass = "p-4 rounded-lg border border-gray-200 bg-white";
+  formClass = "p-4 rounded border border-gray-200 bg-white";
   fields : dynamicform[] = [
     {
       type: 'text',
       name: 'Mã nhân viên',
-      label: 'Mã nhân viên',
+      label: 'EMP.CREATE.ID',
       placeholder: 'EMP__',
       required: true,
       pattern: /^EMP\d{3}$/,
@@ -32,7 +34,7 @@ export class EmployeeCreateComponent {
     {
       type: 'text',
       name: 'Họ và tên',
-      label: 'Họ và tên',
+      label: 'EMP.CREATE.FULL_NAME',
       placeholder: 'Nguyễn Văn A',
       required: true,
       pattern: /^[a-zA-ZÀ-ỹ\s]+$/,
@@ -43,7 +45,7 @@ export class EmployeeCreateComponent {
     {
       type: 'select',
       name: 'Giới tính',
-      label: 'Giới tính',
+      label: 'EMP.CREATE.GENDER',
       required: true,
       options: [
         { label: 'Nam', value: 'male' },
@@ -56,7 +58,7 @@ export class EmployeeCreateComponent {
     {
       type: 'date',
       name: 'Ngày sinh',
-      label: 'Ngày sinh',
+      label: 'EMP.CREATE.DATE_OF_BIRTH',
       minDate: new Date(1900, 0, 1),
       maxDate: new Date(),
       placeholder: 'yyyy-mm-dd',
@@ -69,7 +71,7 @@ export class EmployeeCreateComponent {
     {
       type: 'email',
       name: 'Email',
-      label: 'Email',
+      label: 'EMP.CREATE.EMAIL',
       placeholder: 'name@company.vn',
       required: true,
       pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -78,9 +80,20 @@ export class EmployeeCreateComponent {
       }
     },
     {
+      type: 'tel',
+      name: 'Số điện thoại',
+      label: 'EMP.CREATE.PHONE',
+      placeholder: '0123456789',
+      required: true,
+      pattern: /^0\d{9}$/,
+      className: {
+        span: 'col-span-6'
+      }
+    },
+    {
       type: 'select',
       name: 'Phòng ban',
-      label: 'Phòng ban',
+      label: 'EMP.CREATE.DEPARTMENT',
       required: true,
       options: [
         { label: 'Kinh doanh', value: 'sales' },
@@ -93,8 +106,8 @@ export class EmployeeCreateComponent {
     },
     {
       type: 'select',
-      name: 'Chức danh',
-      label: 'Chức danh',
+      name: 'Chức vụ',
+      label: 'EMP.CREATE.POSITION',
       required: true,
       options: [
         { label: 'Nhân viên', value: 'employee' },
@@ -108,7 +121,7 @@ export class EmployeeCreateComponent {
     {
       type: 'date',
       name: 'Ngày vào làm',
-      label: 'Ngày vào làm',
+      label: 'EMP.CREATE.JOIN_DATE',
       minDate: new Date(1900, 0, 1),
       maxDate: new Date(),
       placeholder: 'yyyy-mm-dd',
@@ -120,8 +133,8 @@ export class EmployeeCreateComponent {
     },
     {
       type: 'number',
-      name: 'Lương cơ bản',
-      label: 'Lương cơ bản',
+      name: 'Lương',
+      label: 'EMP.CREATE.SALARY',
       placeholder: 'VND',
       required: true,
       pattern: /^\d+$/,
@@ -132,7 +145,8 @@ export class EmployeeCreateComponent {
     {
       type: 'select',
       name: 'Trạng thái',
-      label: 'Trạng thái',
+      label: 'EMP.CREATE.STATUS',
+      placeholder: 'ACTIVE / PROBATION / INACTIVE / TERMINATED  ▾',
       required: true,
       options: [
         { label: 'Hoạt động', value: 'active' },

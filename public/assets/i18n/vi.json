@@ -90,7 +90,22 @@
      "LOGOUT": "Đăng xuất",
      "PROFILE": "Hồ sơ cá nhân"
     },
-
+    
+    "EMP": {
+        "CREATE": {
+            "ID": "Mã nhân viên",
+            "FULL_NAME":"Họ và tên",
+            "GENDER": "Giới tính",
+            "DATE_OF_BIRTH": "Ngày sinh",
+            "EMAIL": "Email",
+            "PHONE": "Số điện thoại",
+            "DEPARTMENT":"Phòng ban",
+            "POSITION": "Chức vụ",
+            "JOIN_DATE": "Ngày vào làm",
+            "SALARY": "Lương",
+            "STATUS": "Trạng thái"
+        }
+    },
     "DEPARTMENT": {
      "TITLE": "Phòng ban",
      "SEARCH_PLACEHOLDER": "Tìm theo mã/tên phòng ban...",

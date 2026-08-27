@@ -91,6 +91,7 @@
      "LOGOUT": "Se déconnecter",
      "PROFILE": "Profil"
     },
+    
     "DEPARTMENT": {
       "TITLE": "Département",
       "SEARCH_PLACEHOLDER": "Rechercher par code/nom de département...",

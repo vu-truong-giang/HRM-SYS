@@ -91,6 +91,7 @@
      "LOGOUT": "Logout",
      "PROFILE": "Profile"
     },
+    
     "DEPARTMENT": {
       "TITLE": "Department",
       "SEARCH_PLACEHOLDER": "Search by department code/name...",
