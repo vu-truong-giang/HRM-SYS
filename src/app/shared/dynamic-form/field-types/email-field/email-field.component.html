@@ -5,7 +5,14 @@
         @if(config().required) {
             <span class="text-red-500">*</span>
         }
-        
+        @if (control().invalid && control().touched) {
+            @if (control().hasError('required')) {
+                <span class="text-xs text-red-600 font-normal italic">({{ config().errorMessage?.required | translate}})</span>
+            }
+            @if (control().hasError('pattern')) {
+                <span class="text-xs text-red-600 font-normal italic">({{ config().errorMessage?.pattern | translate}})</span>
+            }
+        }
     </label>
     <input 
     type="email"
@@ -18,12 +25,7 @@
     [class.border-red-400]="control().invalid && control().touched"
     [class.border-slate-300]="!(control().invalid && control().touched)"
     >
-    @if (control().invalid && control().touched) {
-        @if (control().hasError('required')) {
-            <p>{{ config().errorMessage?.required | translate}}</p>
-        }
-        @if (control().hasError('pattern')) {
-            <p>{{ config().errorMessage?.pattern | translate}}</p>
-        }
-    }
+    
+        
+    
 </div>

@@ -104,6 +104,20 @@
             "JOIN_DATE": "Ngày vào làm",
             "SALARY": "Lương",
             "STATUS": "Trạng thái"
+        },
+        "ERROR_MESSAGE": {
+            "ID_REQUIRED": "Mã nhân viên là bắt buộc",
+            "ID_PATTERN": "Mã nhân viên phải có định dạng EMPxxx (x là số)",
+            "ID_MIN": "Mã nhân viên phải có ít nhất 6 ký tự",
+            "FULL_NAME_REQUIRED": "Họ và tên là bắt buộc",
+            "FULL_NAME_PATTERN": "Họ và tên chỉ được chứa chữ cái và khoảng trắng",
+            "EMAIL_REQUIRED": "Email là bắt buộc",
+            "EMAIL_PATTERN": "Email không hợp lệ",
+            "PHONE_REQUIRED": "Số điện thoại là bắt buộc",
+            "PHONE_PATTERN": "Số điện thoại không hợp lệ",
+            "SALARY_REQUIRED": "Lương là bắt buộc",
+            "SALARY_PATTERN": "Lương không hợp lệ",
+            "SALARY_MIN": "Lương phải lớn hơn 0"
         }
     },
     "DEPARTMENT": {

@@ -1,5 +1,6 @@
 import { Component , inject , signal} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Validators } from '@angular/forms';
 
 import { TextField } from '../../../../shared/models/field-types/text-fiels.model';
 import { DateField } from '../../../../shared/models/field-types/date-field.model';
@@ -7,6 +8,7 @@ import { SelectField } from '../../../../shared/models/field-types/select-field.
 import { DynamicFormComponent } from '../../../../shared/dynamic-form/dynamic-form.component';
 import { EmailField } from '../../../../shared/models/field-types/email-field.model';
 
+import { VALIDATION_PATTERN } from '../../../../shared/dynamic-form/constants/validation-pattern.constant';
 export type dynamicform = TextField | DateField | SelectField | EmailField ;
 @Component({
   selector: 'app-employee-create',
@@ -26,7 +28,15 @@ export class EmployeeCreateComponent {
       label: 'EMP.CREATE.ID',
       placeholder: 'EMP__',
       required: true,
-      pattern: /^EMP\d{3}$/,
+      validators: [
+        Validators.required, 
+        Validators.pattern(VALIDATION_PATTERN.EMP_ID)
+      ],
+      errorMessage: {
+        required : 'EMP.ERROR_MESSAGE.ID_REQUIRED',
+        pattern : 'EMP.ERROR_MESSAGE.ID_PATTERN',
+        minLength : 'EMP.ERROR_MESSAGE.ID_MIN'
+      },
       className: {
         span: 'col-span-6'
       }
@@ -37,7 +47,14 @@ export class EmployeeCreateComponent {
       label: 'EMP.CREATE.FULL_NAME',
       placeholder: 'Nguyễn Văn A',
       required: true,
-      pattern: /^[a-zA-ZÀ-ỹ\s]+$/,
+      validators: [
+        Validators.required,
+        Validators.pattern(VALIDATION_PATTERN.FULL_NAME)
+      ],
+      errorMessage: {
+        required : 'EMP.ERROR_MESSAGE.FULL_NAME_REQUIRED',
+        pattern : 'EMP.ERROR_MESSAGE.FULL_NAME_PATTERN'
+      },
       className: {
         span: 'col-span-6'
       }
@@ -74,7 +91,14 @@ export class EmployeeCreateComponent {
       label: 'EMP.CREATE.EMAIL',
       placeholder: 'name@company.vn',
       required: true,
-      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      validators: [
+        Validators.required,
+        Validators.pattern(VALIDATION_PATTERN.EMAIL)
+      ],
+      errorMessage: {
+        required : 'EMP.ERROR_MESSAGE.EMAIL_REQUIRED',
+        pattern : 'EMP.ERROR_MESSAGE.EMAIL_PATTERN'
+      },
       className: {
         span: 'col-span-6'
       }
@@ -85,7 +109,14 @@ export class EmployeeCreateComponent {
       label: 'EMP.CREATE.PHONE',
       placeholder: '0123456789',
       required: true,
-      pattern: /^0\d{9}$/,
+      validators: [
+        Validators.required,
+        Validators.pattern(VALIDATION_PATTERN.TEL)
+      ],
+      errorMessage: {
+        required : 'EMP.ERROR_MESSAGE.PHONE_REQUIRED',
+        pattern : 'EMP.ERROR_MESSAGE.PHONE_PATTERN'
+      },
       className: {
         span: 'col-span-6'
       }
@@ -137,7 +168,14 @@ export class EmployeeCreateComponent {
       label: 'EMP.CREATE.SALARY',
       placeholder: 'VND',
       required: true,
-      pattern: /^\d+$/,
+      validators: [
+        Validators.required,
+        Validators.pattern(VALIDATION_PATTERN.SALARY)
+      ],
+      errorMessage: {
+        required : 'EMP.ERROR_MESSAGE.SALARY_REQUIRED',
+        pattern : 'EMP.ERROR_MESSAGE.SALARY_PATTERN'
+      },
       className: {
         span: 'col-span-6'
       }
