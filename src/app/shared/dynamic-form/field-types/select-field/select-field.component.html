@@ -6,12 +6,15 @@
     [ngClass]="config().className?.label ?? ''">
     
     {{ config().label | translate }}
+    @if(config().required) {
+      <span class="text-red-500">*</span>
+    }
   </label>
   
   <select
   [formControl]="control()"
   
-  class="rounded-lg border border-gray-300 px-3 py-2"
+  class="rounded-lg border border-gray-300 px-3.5 py-2.5 pl-2.5 text-sm text-gray-900 shadow-sm "
   [ngClass]="config().className?.input">
   
     <option

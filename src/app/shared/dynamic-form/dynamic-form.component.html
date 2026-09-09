@@ -7,7 +7,7 @@
 
   @for (field of fields(); track field.name) {
 
-    @if (field.type === 'text') {
+    @if (field.type === 'text' || field.type === 'number' || field.type === 'tel') {
       <app-text-field
         [config]="field"
         [control]="getControl(field.name)"

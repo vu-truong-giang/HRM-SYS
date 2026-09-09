@@ -9,6 +9,7 @@ export interface  BaseFieldConfig{
     placeholder ?: string;
     options ?: DynamicFieldOption[];
     validators ?: ValidatorFn[];
+    required ?: boolean;
     errorMessage ?: {
         required ?: string;
         minLength ?: string;

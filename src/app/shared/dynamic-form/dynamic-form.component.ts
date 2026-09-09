@@ -40,6 +40,7 @@ export class DynamicFormComponent {
   fields = input.required<FieldConfig[]>();
   formSubmit = output<Record<string, any>>();
   initialValue = input<Record<string, any>>({}); 
+  
   searchChange = output<string>();
   searchClick = output<void>();
 
